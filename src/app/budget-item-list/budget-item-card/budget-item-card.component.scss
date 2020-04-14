@@ -1,0 +1,78 @@
+@import '../../../main-styles.scss'; 
+
+.root {
+    display: flex;
+    width: 100%;
+    position: relative; 
+
+    .close-icon-button {
+        position: absolute;
+        height: 28px;
+        width: 28px;
+        background: $dark;
+
+        top: -14px;
+        right: -14px;
+        border-radius: 50%;
+
+        background-image: url('../../../assets/delete_icon.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+
+        //opacity: 0; 
+        transform: scale(0);
+        transition: opacity 0.2s ease-in, transform 0.2s ease-out;
+    }
+
+    &:hover {
+        .close-icon-button {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+    }
+}
+
+.budget-item {
+    display: flex;
+    width: 100%;
+    background-color: $light-grey;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer; 
+
+    border: 2px solid #9f68eb; 
+
+    .description {
+        flex-grow: 1; 
+        font-size: 18px;
+        margin-left: 5px;
+        padding: 5px;
+    }
+
+    .montant {
+        padding: 5px;
+        border-radius: 3px;
+        border: 1px solid lightgray;
+    }
+}
+
+.depense {
+    p {
+        color: $red;
+    }
+
+    .montant {
+        background-color: $light-red;
+    }
+}
+
+.depot {
+    p {
+        color: $green;
+    }
+
+    .montant {
+        background-color: $light-green;
+    }
+}

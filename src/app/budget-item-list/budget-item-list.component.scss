@@ -1,0 +1,53 @@
+@import "../../main-styles.scss";
+
+.budget-items-section {
+    display: flex;
+    padding: 50px;
+
+     //Pour centrer le texte : 
+     justify-content: center; // horizontalement 
+     align-items: center;     // verticalement   
+
+    .budget-items-container {
+        display: flex;
+        max-width: 70%;
+        height: 100%;
+        //background-color: lightgray;
+
+        .depot-column, .depense-column {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 0;
+            flex-grow: 1;
+
+            h1 {
+                font-family: 'Lato';
+                font-size: 24px;
+                font-weight: 900;
+                text-transform: capitalize;
+                letter-spacing: 1px;
+                
+            }
+        }
+
+        .depot-column {
+            margin-right: 35px;
+
+            h1 {
+                color: $green;
+            }
+        }
+
+        .depense-column {
+            //margin-right: 35px;
+
+            h1 {
+                color: $red;
+            }
+        }
+    }
+}
+
+.budget-item-card-margin {
+    margin-top: 15px;
+}
