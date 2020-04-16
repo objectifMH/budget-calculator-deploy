@@ -16,8 +16,10 @@
     </app-add-item-form>
   </div>
 </section>
-<hr class="hr-add-form">
-<app-budget-item-list [listeBudgetInput]="listeBudgetForm"
-                      [colonneBudgetInput]="totalColonne"
-                      (listeBudgetMAJ)="recupereListeAJour($event)"
-></app-budget-item-list>
+<section *ngIf="listeBudgetForm.length > 0">
+    <hr class="hr-add-form">
+    <app-budget-item-list [listeBudgetInput]="listeBudgetForm"
+                          [colonneBudgetInput]="totalColonne"
+                          (listeBudgetMAJ)="recupereListeAJour($event)"
+    ></app-budget-item-list>
+</section>
