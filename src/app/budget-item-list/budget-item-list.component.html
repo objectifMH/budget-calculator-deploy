@@ -7,6 +7,7 @@
                 <app-budget-item-card class="budget-item-card-margin"
                     [budgetInputCard]="budget"
                     (budgetSuppOutput)="suppBudget($event)"
+                    (cardClick)="onCardClick(budget)"
                     *ngIf="budget.montant > 0">
                 </app-budget-item-card>
             </div>
@@ -18,6 +19,7 @@
                     <app-budget-item-card class="budget-item-card-margin"
                         [budgetInputCard]="budget"
                         (budgetSuppOutput)="suppBudget($event)"
+                        (cardClick)="onCardClick(budget)"
                         *ngIf="budget.montant < 0">
                     </app-budget-item-card>
                 </div>

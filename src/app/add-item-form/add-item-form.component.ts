@@ -8,14 +8,14 @@ import { BudgetComponent } from 'src/budget';
 })
 export class AddItemFormComponent implements OnInit {
 
-  montant: number;
-  description: string;
+
 
 
   @Output()
   budgetOutput = new EventEmitter<BudgetComponent>();
 
-  budgetForm: BudgetComponent;
+  @Input()
+  budgetForm: BudgetComponent = {indice: null, montant: null, description: ''};
 
   constructor() { }
 
@@ -24,12 +24,13 @@ export class AddItemFormComponent implements OnInit {
 
   submitForm(form) {
     this.budgetForm = form.value ;
-    console.log(form, this.budgetForm);
+    // console.log(form, this.budgetForm);
     // On déclenche l'output pour envoyer au parent :
     this.budgetOutput.emit(this.budgetForm);
 
-    //on reinitialise le form, pour remettre à 0 les champs : 
+    // on reinitialise le form, pour remettre à 0 les champs :
     form.reset();
+    this.budgetForm = {indice: null, montant: null, description: ''};
 
   }
 

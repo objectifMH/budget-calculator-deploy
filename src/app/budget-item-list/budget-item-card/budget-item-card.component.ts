@@ -8,6 +8,9 @@ import { BudgetComponent } from 'src/budget';
 })
 export class BudgetItemCardComponent implements OnInit {
 
+  @Output()
+  cardClick = new EventEmitter<any>();
+
   @Input('budgetInputCard')
   budget: BudgetComponent;
 
@@ -24,4 +27,7 @@ export class BudgetItemCardComponent implements OnInit {
     this.budgetSuppOutput.emit(budget);
   }
 
+  onCardClick() {
+    this.cardClick.emit();
+  }
 }

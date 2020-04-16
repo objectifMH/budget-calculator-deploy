@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BudgetComponent } from 'src/budget';
+import { MatDialog } from '@angular/material';
+import { EditItemModalComponent } from '../edit-item-modal/edit-item-modal.component';
 
 @Component({
   selector: 'app-budget-item-list',
@@ -17,9 +19,9 @@ export class BudgetItemListComponent implements OnInit {
   coloneBudget;
 
   @Output()
-  listeBudgetSupp = new EventEmitter();
+  listeBudgetMAJ = new EventEmitter();
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
     console.log('listeBudget dans le composant Liste : ' , this.listeBudget);
@@ -28,9 +30,31 @@ export class BudgetItemListComponent implements OnInit {
   suppBudget(budgetSupp) {
     if ( this.listeBudget.indexOf(budgetSupp) !== -1 ) {
       this.listeBudget.splice(this.listeBudget.indexOf(budgetSupp), 1) ;
-      this.listeBudgetSupp.emit(this.listeBudget);
+      this.listeBudgetMAJ.emit(this.listeBudget);
     }
 
+  }
+
+  onCardClick(budgetItem: BudgetComponent) {
+    const dialogRef = this.dialog.open(EditItemModalComponent, {
+      width: '580px',
+      data: budgetItem
+    });
+    console.log('card click ', budgetItem);
+
+    dialogRef.afterClosed().subscribe(result => {
+    console.log('result > ', result);
+      if ( result ) {
+        // On va remplacer l'itemBudget par celui du formulaire, c a d 'result' qui est le budgetItem maj :
+        this.listeBudget[this.listeBudget.indexOf(budgetItem)] = result;
+
+        // on emit la liste MAJ : 
+        this.listeBudgetMAJ.emit(this.listeBudget);
+        console.log(this.listeBudget);
+      }
+    }
+    ,
+    err => console.log(err));
   }
 
 }

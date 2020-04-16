@@ -18,7 +18,7 @@ export class MainPageComponent implements OnInit {
   }
 
   recupereBudgetAdd(budgetFormAdd: BudgetComponent) {
-    // console.log('le output a bien été appelé', budgetFormAdd);
+    console.log('le output a bien été appelé', budgetFormAdd);
     if (budgetFormAdd.description !== undefined && budgetFormAdd.montant !== undefined) {
       budgetFormAdd.indice = this.listeBudgetForm.length + 1;
       this.listeBudgetForm.push(budgetFormAdd);
@@ -46,7 +46,7 @@ export class MainPageComponent implements OnInit {
                     map(budgetD => budgetD.montant );
 
       this.totalColonne.depot = depot.length > 0 ? depot.reduce((a, b) => (a + b)) : 0 ;
-      console.log(this.totalColonne);
+      //console.log(this.totalColonne);
   }
 
   allClear() {
@@ -63,6 +63,7 @@ export class MainPageComponent implements OnInit {
     } else {
       this.total = 0;
     }
+    console.log("On a recuperer la liste ", this.listeBudgetForm);
   }
 
 }
