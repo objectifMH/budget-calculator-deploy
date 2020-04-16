@@ -1,20 +1,20 @@
-<form>
+<form #formBudget="ngForm" (ngSubmit)="submitForm(formBudget)"> 
     <div class="field is-horizontal">
         <div class="field-body">
             <div class="field is-narrow">
                 <p class="control">
-                    <input type="number" class="input input-montant" placeholder="Montant">
+                    <input type="number" [ngModel]="montant" name="montant" class="input input-montant" placeholder="Montant" required>
                 </p>
             </div>
 
             <div class="field">
                 <p class="control">
-                    <input type="text" class="input input-descripton" placeholder="Description">
+                    <input type="text" [ngModel]="description" name="description" class="input input-descripton" placeholder="Description" required>
                 </p>
             </div>
 
             <div class="field is-narrow">
-                <button class="button is-primary" >
+                <button class="button is-primary" [disabled]="formBudget.invalid">
                     Ajouter
                 </button>
             </div>

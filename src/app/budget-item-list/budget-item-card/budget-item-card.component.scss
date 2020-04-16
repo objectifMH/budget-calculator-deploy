@@ -5,15 +5,22 @@
     width: 100%;
     position: relative; 
 
+    margin-top: 15px; 
+
+
+
     .close-icon-button {
         position: absolute;
         height: 28px;
         width: 28px;
-        background: $dark;
+        background: lightgrey;
+        //border: 2px solid #9f68eb; 
 
         top: -14px;
         right: -14px;
         border-radius: 50%;
+
+        cursor: pointer; 
 
         background-image: url('../../../assets/delete_icon.svg');
         background-repeat: no-repeat;
@@ -31,6 +38,30 @@
         }
         
     }
+
+    .numero-budget {
+        //position: absolute;
+        display: flex; 
+        
+        justify-content: center;
+        align-items: center;
+
+        height: 25px;
+        width: 25px;
+
+        color: white;
+
+        margin: auto 3px;
+        border-radius: 4px;
+
+        &.depot {
+            background: lightgrey;
+        }
+
+        &.depense {
+            background: $red;
+        }
+    }
 }
 
 .budget-item {
@@ -39,9 +70,9 @@
     background-color: $light-grey;
     padding: 10px;
     border-radius: 5px;
-    cursor: pointer; 
+    //cursor: pointer; 
 
-    border: 2px solid #9f68eb; 
+    border: 2px solid lightgray; 
 
     .description {
         flex-grow: 1; 

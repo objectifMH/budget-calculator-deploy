@@ -20,14 +20,19 @@
     }
 }
 
+
+
 .total-budget-section {
     display: flex;
+    position: relative;
     height: 250px; 
     //background: $dark;
     background: linear-gradient(21deg, $dark, purple);
 
     justify-content: center;
     align-items: center;
+
+    
 
     h2 {
         font-family: 'Lato';
@@ -43,7 +48,38 @@
             color: lighten($color: $red, $amount: 21%)
         }
     }
+
+
+    .all-clear {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+
+        padding: 5px;
+
+        font-family: 'Lato';
+        font-weight: 300;
+        font-size: 58px;
+        color: white;
+        font-size: x-large;
+        background-color: orange;
+        border-radius: 3px;
+        border: orange 2px solid; 
+
+        cursor: pointer; 
+        transform: scale(1);
+        transition: opacity 0.2s ease-in-out, transform 0.2s ease-out;
+    }
+
+    .all-clear:hover {
+        opacity: 1;
+        transform: scale(1.15);
+        font-weight: bolder;
+    }
+
+    
 }
+
 
 .add-item-section {
 

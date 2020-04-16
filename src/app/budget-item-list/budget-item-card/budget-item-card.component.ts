@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { BudgetComponent } from 'src/budget';
 
 @Component({
   selector: 'app-budget-item-card',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BudgetItemCardComponent implements OnInit {
 
+  @Input('budgetInputCard')
+  budget: BudgetComponent;
+
+  @Output()
+  budgetSuppOutput = new EventEmitter<BudgetComponent>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  supprimeCard(budget) {
+    console.log(budget);
+    this.budgetSuppOutput.emit(budget);
   }
 
 }

@@ -1,12 +1,14 @@
-<div class="root">
-    <div class="budget-item" [ngClass]="{'depot': 0, 'depense': 0}">
+<div class="root" *ngIf="budget">
+
+    <div class="numero-budget" [ngClass]="{'depot': budget.montant>0, 'depense': budget.montant<0}">{{budget.indice}} </div>
+    <div class="budget-item" [ngClass]="{'depot': budget.montant>0, 'depense': budget.montant<0}">
         <div class="description">
-            <p>Description 1</p>
+            <p>{{budget.description }}</p>
         </div>
         <div class="montant">
-            <p>234</p>
+            <p><span *ngIf="budget.montant>0">+</span>{{budget.montant}}€</p>
         </div>
     </div>
 
-    <div class="close-icon-button"></div>
+    <div class="close-icon-button" (click)="supprimeCard(budget)" title="Supprimer cet élement"></div>
 </div>

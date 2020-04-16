@@ -1,25 +1,26 @@
-<section class="budget-items-section">
+<section class="budget-items-section" *ngIf="listeBudget.length > 0">
     <div class="budget-items-container">
         <div class="depot-column">
             <h1>dépot</h1>
-            <app-budget-item-card class="budget-item-card-margin"></app-budget-item-card>
-            <app-budget-item-card class="budget-item-card-margin"></app-budget-item-card>
-            <app-budget-item-card class="budget-item-card-margin"></app-budget-item-card>
-            <app-budget-item-card class="budget-item-card-margin"></app-budget-item-card>
-            <app-budget-item-card class="budget-item-card-margin"></app-budget-item-card>
+            <p class="total-column">+{{coloneBudget.depot}}€ </p>
+            <div *ngFor="let budget of listeBudget">
+                <app-budget-item-card class="budget-item-card-margin"
+                    [budgetInputCard]="budget"
+                    (budgetSuppOutput)="suppBudget($event)"
+                    *ngIf="budget.montant > 0">
+                </app-budget-item-card>
+            </div>
         </div>
         <div class="depense-column">
             <h1>dépense </h1>
-            <app-budget-item-card class="budget-item-card-margin"></app-budget-item-card>
-            <app-budget-item-card class="budget-item-card-margin"></app-budget-item-card>
-            <app-budget-item-card class="budget-item-card-margin"></app-budget-item-card>
-            <app-budget-item-card class="budget-item-card-margin"></app-budget-item-card>
-            <app-budget-item-card class="budget-item-card-margin"></app-budget-item-card>
-            <app-budget-item-card class="budget-item-card-margin"></app-budget-item-card>
-            <app-budget-item-card class="budget-item-card-margin"></app-budget-item-card>
-            <app-budget-item-card class="budget-item-card-margin"></app-budget-item-card>
-            <app-budget-item-card class="budget-item-card-margin"></app-budget-item-card>
-            <app-budget-item-card class="budget-item-card-margin"></app-budget-item-card>   
+            <p class="total-column">{{coloneBudget.depense}}€ </p>
+            <div *ngFor="let budget of listeBudget">
+                    <app-budget-item-card class="budget-item-card-margin"
+                        [budgetInputCard]="budget"
+                        (budgetSuppOutput)="suppBudget($event)"
+                        *ngIf="budget.montant < 0">
+                    </app-budget-item-card>
+                </div>
         </div>
     </div>
 </section>

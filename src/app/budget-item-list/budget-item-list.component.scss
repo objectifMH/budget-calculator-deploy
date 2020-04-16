@@ -10,7 +10,7 @@
 
     .budget-items-container {
         display: flex;
-        max-width: 70%;
+        width: 70%;
         height: 100%;
         //background-color: lightgray;
 
@@ -32,17 +32,32 @@
 
         .depot-column {
             margin-right: 35px;
+            
+            .total-column {
+                background: #bafacd;
+                margin: 5px auto;
+                padding: 5px 50px;
+                border-radius: 4px;
+                }
 
             h1 {
-                color: $green;
+                margin: 5px auto; 
+                color: lightgray;
             }
         }
 
         .depense-column {
-            //margin-right: 35px;
+            .total-column {
+                background: #ffe5e3;
+                color: red;
+                margin: 5px auto;
+                padding: 5px 50px;
+                border-radius: 4px;
+                }
 
             h1 {
-                color: $red;
+                margin: 5px auto; 
+                color: $red; // #9f68eb;
             }
         }
     }
