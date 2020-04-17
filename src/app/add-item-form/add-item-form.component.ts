@@ -24,7 +24,7 @@ export class AddItemFormComponent implements OnInit {
 
   submitForm(form) {
     this.budgetForm = form.value ;
-    // console.log(form, this.budgetForm);
+    //console.log(form, this.budgetForm);
     // On déclenche l'output pour envoyer au parent :
     this.budgetOutput.emit(this.budgetForm);
 

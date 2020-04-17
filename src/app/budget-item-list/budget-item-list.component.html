@@ -3,24 +3,28 @@
         <div class="depot-column">
             <h1>dépot</h1>
             <p class="total-column">+{{coloneBudget.depot}}€ </p>
-            <div *ngFor="let budget of listeBudget">
+            <div *ngFor="let budget of listeBudget;let index = index; let isFirst = first; let isOdd = odd;">
                 <app-budget-item-card class="budget-item-card-margin"
                     [budgetInputCard]="budget"
                     (budgetSuppOutput)="suppBudget($event)"
                     (cardClick)="onCardClick(budget)"
-                    *ngIf="budget.montant > 0">
+                    *ngIf="budget.montant > 0"
+                    [indice]="index"
+                    >
                 </app-budget-item-card>
             </div>
         </div>
         <div class="depense-column">
             <h1>dépense </h1>
             <p class="total-column">{{coloneBudget.depense}}€ </p>
-            <div *ngFor="let budget of listeBudget">
+            <div *ngFor="let budgetD of listeBudget;let indexDepense = index;">
                     <app-budget-item-card class="budget-item-card-margin"
-                        [budgetInputCard]="budget"
+                        [budgetInputCard]="budgetD"
                         (budgetSuppOutput)="suppBudget($event)"
-                        (cardClick)="onCardClick(budget)"
-                        *ngIf="budget.montant < 0">
+                        (cardClick)="onCardClick(budgetD)"
+                        *ngIf="budgetD.montant <= 0"
+                        [indice]="indexDepense"
+                        >
                     </app-budget-item-card>
                 </div>
         </div>

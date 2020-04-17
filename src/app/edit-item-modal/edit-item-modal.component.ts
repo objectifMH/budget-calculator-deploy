@@ -17,7 +17,7 @@ export class EditItemModalComponent implements OnInit {
   }
 
   onSubmitEdition(formUpdate: BudgetComponent) {
-    console.log(formUpdate);
+    //console.log(formUpdate);
     this.dialogRef.close(formUpdate);
   }
 

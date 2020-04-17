@@ -14,6 +14,9 @@ export class BudgetItemCardComponent implements OnInit {
   @Input('budgetInputCard')
   budget: BudgetComponent;
 
+  @Input()
+  indice: number;
+
   @Output()
   budgetSuppOutput = new EventEmitter<BudgetComponent>();
 

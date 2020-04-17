@@ -24,7 +24,7 @@ export class BudgetItemListComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
-    console.log('listeBudget dans le composant Liste : ' , this.listeBudget);
+    //console.log('listeBudget dans le composant Liste : ' , this.listeBudget);
   }
 
   suppBudget(budgetSupp) {
@@ -40,17 +40,18 @@ export class BudgetItemListComponent implements OnInit {
       width: '580px',
       data: budgetItem
     });
-    console.log('card click ', budgetItem);
+    //console.log('card click ', budgetItem);
 
     dialogRef.afterClosed().subscribe(result => {
-    console.log('result > ', result);
+    //console.log('result > ', result);
       if ( result ) {
         // On va remplacer l'itemBudget par celui du formulaire, c a d 'result' qui est le budgetItem maj :
+        result.indice = this.listeBudget.indexOf(budgetItem) + 1; 
         this.listeBudget[this.listeBudget.indexOf(budgetItem)] = result;
 
-        // on emit la liste MAJ : 
+        // on emit la liste MAJ :
         this.listeBudgetMAJ.emit(this.listeBudget);
-        console.log(this.listeBudget);
+        //console.log(this.listeBudget);
       }
     }
     ,

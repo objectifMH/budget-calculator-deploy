@@ -1,8 +1,9 @@
 <div class="root" *ngIf="budget">
 
-    <div class="numero-budget" [ngClass]="{'depot': budget.montant>0, 'depense': budget.montant<0}">{{budget.indice}} </div>
+    <div class="numero-budget" [ngClass]="{'depot': budget.montant>0, 'depense': budget.montant<0}">{{indice}} </div>
     <div class="budget-item" [ngClass]="{'depot': budget.montant>0, 'depense': budget.montant<0}" 
         (click)="onCardClick()"
+        title="Cliquer pour éditer l'item"
         >
         <div class="description">
             <p>{{budget.description }}</p>
