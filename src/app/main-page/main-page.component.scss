@@ -1,22 +1,71 @@
 @import "../../main-styles.scss";
 
 .top-bar {
-    display: flex;
+    
     width: 100%; 
     height: 68px;
     background: linear-gradient(75deg, rgb(214, 180, 247), rgb(173, 203, 231));
 
-    //Pour centrer le texte : 
-    justify-content: center; // horizontalement 
-    align-items: center;     // verticalement   
+    display: grid;
+    grid-template-columns: 300px 1fr;
 
     h1 {
+
+        display: flex;
+        //Pour centrer le texte : 
+        justify-content: center; // horizontalement 
+        align-items: center;     // verticalement   
+        flex-direction: end;
+
         font-family: 'Lato';
         font-size: 18px;
         letter-spacing: 4px;
         font-weight: 900;
         text-transform: uppercase; 
         color: $dark;
+    }
+
+    :nth-child(1) {
+
+    }
+
+    :nth-child(2) {
+        display: flex;
+        justify-content: flex-end;
+
+        margin-right: 1%;
+
+        ul {
+            display: flex;
+
+            justify-content: center; // horizontalement 
+            align-items: center;     // verticalement  
+        }
+
+        li {
+            display: flex;
+
+            //Pour centrer le texte : 
+            justify-content: center; // horizontalement 
+            align-items: center;     // verticalement   
+            
+            padding: 2px 5px;
+            
+            color: white;
+
+            span {
+                    font-size: 32px;
+                    transition: all .2s ease-in-out;
+                    cursor: pointer;
+
+                    &:hover {
+                    transform: scale(1.2);
+                }
+            }
+            
+        }
+        
+
     }
 }
 
