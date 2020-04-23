@@ -1,5 +1,11 @@
 # BudgetApp
 
+#Screen de l'application : 
+
+https://github.com/objectifMH/budget-calculator/blob/master/src/assets/Capture%20d%E2%80%99%C3%A9cran%202020-04-23%20%C3%A0%2011.17.59.png
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0.
 
 ## Development server
