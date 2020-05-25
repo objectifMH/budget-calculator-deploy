@@ -1,5 +1,5 @@
 # Deploy 
-Application deployer à l'adresse : https://objectifmh.github.io/budget-calculator-deploy/
+Application deployé à l'adresse : https://objectifmh.github.io/budget-calculator-deploy/
 
 # BudgetApp
 
